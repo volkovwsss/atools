@@ -21,8 +21,8 @@ Gui, Font, S10 CDefault, Verdana
 CustomColor3 = 6A9AB6
 WinSet, TransColor, %CustomColor3% 250
 buildscr = 65
-downlurl := "https://github.com/PizdaZaebali/pizdanahuibliat/blob/main/updt.exe?raw=true"
-downllen := "https://github.com/volkovwsss/atools/blob/main/newupdate.ini"
+downlurl := "https://github.com/volkovwsss/atools/blob/main/updt.ahk"
+downllen := "https://raw.githubusercontent.com/volkovwsss/atools/main/newupdate.ini"
 Utf8ToAnsi(ByRef Utf8String, CodePage = 1251)
 {
 If (NumGet(Utf8String) & 0xFFFFFF) = 0xBFBBEF
