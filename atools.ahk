@@ -1,4 +1,4 @@
-﻿; <COMPILER: v1.1.36.02>
+; <COMPILER: v81>
 Menu, Tray, NoStandard
 Menu, Tray, Add, Help
 Menu, Tray, Rename, Help, Технічна підтримка
@@ -21,7 +21,7 @@ Gui, Font, S10 CDefault, Verdana
 CustomColor3 = 6A9AB6
 WinSet, TransColor, %CustomColor3% 250
 buildscr = 65
-downlurl := "https://github.com/volkovwsss/atools/blob/main/updt.ahk"
+downlurl := "https://raw.githubusercontent.com/volkovwsss/atools/main/updt.ahk"
 downllen := "https://raw.githubusercontent.com/volkovwsss/atools/main/newupdate.ini"
 Utf8ToAnsi(ByRef Utf8String, CodePage = 1251)
 {
@@ -116,15 +116,12 @@ return
 }
 Gui, Destroy
 UpdateScript:
-if buildupd > %buildscr%
-{
-put2 := % A_ScriptFullPath
-RegWrite, REG_SZ, HKEY_CURRENT_USER, Software\UAGTA ,put2 , % put2
-URLDownloadToFile, %downlurl%, %a_temp%/nupdt.exe
-Sleep, 1000
-Run, %a_temp%/nupdt.exe
-ExitApp
-}
+    downlurl := "https://raw.githubusercontent.com/volkovwsss/atools/main/updt.ahk"
+    URLDownloadToFile, %downlurl%, %a_temp%\nupdt.ahk
+    Sleep, 1000
+        Run, %A_AhkPath% "%a_temp%\nupdt.ahk"
+    ExitApp
+return
 SkipUpdate:
 Gui, Destroy
 FileReadLine, filePath, road.ini, 1
