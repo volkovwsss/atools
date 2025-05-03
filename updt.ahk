@@ -1,7 +1,7 @@
 Sleep, 1000
-newFile := A_Temp . "\atools.exe"
-URLDownloadToFile, https://github.com/volkovwsss/atools/raw/main/atools.exe, %newFile%
+newFile := A_Temp . "\atools.ahk"
+URLDownloadToFile, %downlurl%, %a_temp%\nupdt.ahk
 Sleep, 1000
-FileCopy, %newFile%, %A_ScriptDir%\atools.exe, 1
-Run, %A_ScriptDir%\atools.exe
+Run, %A_AhkPath% "%a_temp%\nupdt.ahk"
+Run, %A_AhkPath% "%newFile%"
 ExitApp
